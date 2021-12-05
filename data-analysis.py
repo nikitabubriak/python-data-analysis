@@ -40,7 +40,7 @@ def getSentimentPlot():
     
     sentiment = str(concludeSentiment(averagePolarity))
     
-    time = datetime.now().strftime("\nAt: %H:%M" + "\nOn: %m-%d-%y")
+    time = datetime.now().strftime("\nAt: %H:%M" + "\nOn: %d-%m-%y")
     averagePolarity = "{0:.0f}%".format(averagePolarity)
     
     #Plot
@@ -88,20 +88,20 @@ def analyseTweetPolarities(keyword, sampleSize):
 #Conclude overall sentiment based on average tweet polarity
 def concludeSentiment(p):
     
-    sentiment = " Unknown"
+    sentiment = " (Unknown)"
     
     if  -100 <= p < -50:
-        sentiment = " Very Negative"
+        sentiment = " (Very Negative)"
     elif -50 <= p < -10:
-        sentiment = " Negative"
+        sentiment = " (Negative)"
     elif -10 <= p <= 10:
-        sentiment = " Neutral"
+        sentiment = " (Neutral)"
     elif  10 <  p <= 50:
-        sentiment = " Positive"
+        sentiment = " (Positive)"
     elif  50 <  p <= 100:
-        sentiment = " Very Positive"
+        sentiment = " (Very Positive)"
     else:
-        sentiment = " Out of range"
+        sentiment = " (Out of range)"
     
     return sentiment
 
